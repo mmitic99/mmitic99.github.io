@@ -1,19 +1,20 @@
-import { AppBar, Box, Button, Collapse, IconButton, List, ListItem, ListItemButton, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material';
+import { AppBar, Button, Collapse, IconButton, List, ListItem, ListItemButton, styled, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Contrast } from '@mui/icons-material';
 
 const NavbarButton = styled(Button)({
     textTransform: 'none',
-    fontSize: 16,
+    fontSize: 14,
 });
 
 const navElements = ['Home', 'Education', 'Experience', 'Projects', 'Skills', 'About', 'Contact'];
 
-export default function Navbar() {
-    const small = useMediaQuery("(max-width:700px)");
-    const full = useMediaQuery("(min-width:700px)");
+function Navbar({handleThemeClick}) {
+    const small = useMediaQuery("(max-width:719px)");
+    const full = useMediaQuery("(min-width:720px)");
 
     const [open, setOpen] = useState(false);
     const handleClick = () => {
@@ -21,7 +22,7 @@ export default function Navbar() {
     }
 
     return (<div>
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Toolbar >
                 {small && (
                     <>
@@ -29,44 +30,52 @@ export default function Navbar() {
                             sx={{
                                 width: '100%'
                             }}>
-                            <ListItem secondaryAction={
-                                <ListItemButton
-                                size="large"
-                                onClick={handleClick}
-                                color="inherit">
-                                    <MenuIcon/>
-                                </ListItemButton>
-                            }>                    
-                                <Typography variant="h6" nowrap 
+                            <ListItem disableGutters disablePadding>                    
+                                <Typography variant="h6"
                                     sx={{ flexGrow: 1, textDecoration: "none", boxShadow: "none", color: "inherit" }} 
                                     component={Link} to="/"
                                 >
                                     Mihajlo Mitić
                                 </Typography>
+                                <ListItemButton disableGutters
+                                    edge="end"
+                                    onClick={handleClick}
+                                    color="inherit"
+                                    sx={{maxWidth:'25px', pr:'50px'}}>
+                                        <MenuIcon fontSize='medium'/>
+                                </ListItemButton>
+                                <ListItemButton disableGutters
+                                    edge="end"
+                                    color='inherit' 
+                                    onClick={handleThemeClick}
+                                    sx={{maxWidth:'25px'}}>
+                                    <Contrast fontSize='small'></Contrast>
+                                </ListItemButton>
                             </ListItem>
-                            <Collapse
-                                in = {open}
-                                timeout = "auto"
-                                unmountOnExit
-                            >
-                                <List>
-                                    {navElements.map((el) => (    
-                                        <ListItem disablePadding>
-                                            {el == 'Home' ? 
-                                            <ListItemButton color='inherit' component={Link} to='/' onClick={handleClick}>{el}</ListItemButton>:
-                                            <ListItemButton color='inherit' component={Link} to={'/'+ el.toLowerCase()} onClick={handleClick}>{el}</ListItemButton>}
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </Collapse>
-
+                            <ListItem disableGutters disablePadding> 
+                                <Collapse
+                                    in = {open}
+                                    timeout = "auto"
+                                    unmountOnExit
+                                >
+                                    <List>
+                                        {navElements.map((el) => (    
+                                            <ListItem key={el} disablePadding>
+                                                {el == 'Home' ? 
+                                                <ListItemButton color='inherit' component={Link} to='/' onClick={handleClick}>{el}</ListItemButton>:
+                                                <ListItemButton color='inherit' component={Link} to={'/'+ el.toLowerCase()} onClick={handleClick}>{el}</ListItemButton>}
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                </Collapse>
+                            </ListItem>
                         </List>
                     </>
                 )}
 
                 {full && (
                     <>                    
-                        <Typography variant="h6" nowrap 
+                        <Typography variant="h6" 
                             sx={{ flexGrow: 1, textDecoration: "none", boxShadow: "none", color: "inherit" }} 
                             component={Link} to="/"
                         >
@@ -78,6 +87,7 @@ export default function Navbar() {
                             <NavbarButton color='inherit' component={Link} to='/'>{el}</NavbarButton>:
                             <NavbarButton color='inherit' component={Link} to={'/'+ el.toLowerCase()}>{el}</NavbarButton>
                         ))}
+                        <IconButton color='inherit' onClick={handleThemeClick}><Contrast fontSize='small'></Contrast></IconButton>
                     </>
                 )}
 
@@ -85,3 +95,5 @@ export default function Navbar() {
         </AppBar></div>
     );
 };
+
+export default Navbar;

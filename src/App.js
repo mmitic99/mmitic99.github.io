@@ -1,14 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.js';
 import Home from './components/Home.js';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { blue, indigo } from '@mui/material/colors';
+import { useState } from 'react';
 
 
 //TODO: https://mui.com/material-ui/customization/color/
 const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+const lightTheme = createTheme({
   palette: {
     primary: {
       light: '#757ce8',
@@ -21,16 +27,21 @@ const darkTheme = createTheme({
 });
 
 function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  function handleThemeClick(){
+      setIsDarkTheme(!isDarkTheme);
+  }
+  
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <CssBaseline />
 
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-          </Routes>
-        </Router>
+      <Router>
+        <Navbar  handleThemeClick={handleThemeClick}/>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+        </Routes>
+      </Router>
     
     </ThemeProvider>
   );
