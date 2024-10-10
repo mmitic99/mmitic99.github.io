@@ -1,14 +1,19 @@
-import { AppBar, Box, Button, Collapse, IconButton, List, ListItem, ListItemButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, Collapse, IconButton, List, ListItem, ListItemButton, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-const navElements = ['Home', 'Education', 'Experience', 'Projects', 'Skills', 'About', 'Contact']
+const NavbarButton = styled(Button)({
+    textTransform: 'none',
+    fontSize: 16,
+});
+
+const navElements = ['Home', 'Education', 'Experience', 'Projects', 'Skills', 'About', 'Contact'];
 
 export default function Navbar() {
-    const small = useMediaQuery("(max-width:750px)");
-    const full = useMediaQuery("(min-width:750px)");
+    const small = useMediaQuery("(max-width:700px)");
+    const full = useMediaQuery("(min-width:700px)");
 
     const [open, setOpen] = useState(false);
     const handleClick = () => {
@@ -31,8 +36,11 @@ export default function Navbar() {
                                 color="inherit">
                                     <MenuIcon/>
                                 </ListItemButton>
-                            }>
-                                <Typography variant="h6" nowrap sx={{ flexGrow: 1 }}>
+                            }>                    
+                                <Typography variant="h6" nowrap 
+                                    sx={{ flexGrow: 1, textDecoration: "none", boxShadow: "none", color: "inherit" }} 
+                                    component={Link} to="/"
+                                >
                                     Mihajlo Mitić
                                 </Typography>
                             </ListItem>
@@ -58,14 +66,17 @@ export default function Navbar() {
 
                 {full && (
                     <>                    
-                        <Typography variant="h6" nowrap sx={{ flexGrow: 1, textDecoration: "none", boxShadow: "none", color: "inherit" }} component={Link} to="/">
+                        <Typography variant="h6" nowrap 
+                            sx={{ flexGrow: 1, textDecoration: "none", boxShadow: "none", color: "inherit" }} 
+                            component={Link} to="/"
+                        >
                             Mihajlo Mitić
                         </Typography>
 
                         {navElements.map((el) => (
                             el == 'Home' ? 
-                            <Button color='inherit' component={Link} to='/'>{el}</Button>:
-                            <Button color='inherit' component={Link} to={'/'+ el.toLowerCase()}>{el}</Button>
+                            <NavbarButton color='inherit' component={Link} to='/'>{el}</NavbarButton>:
+                            <NavbarButton color='inherit' component={Link} to={'/'+ el.toLowerCase()}>{el}</NavbarButton>
                         ))}
                     </>
                 )}
@@ -74,12 +85,3 @@ export default function Navbar() {
         </AppBar></div>
     );
 };
-
-/*
-
-
-                
-
-
-
-*/
