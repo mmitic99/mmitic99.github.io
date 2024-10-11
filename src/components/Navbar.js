@@ -49,6 +49,9 @@ function Navbar({ handleThemeClick }) {
               <List
                 sx={{
                   width: "100%",
+                  maxHeight: "200px",
+                  overflow: "auto",
+                  "&::-webkit-scrollbar": { display: "none" },
                 }}
               >
                 <ListItem disableGutters disablePadding>
