@@ -93,6 +93,7 @@ function Navbar({ handleThemeClick }) {
                       <ListItem key={el} disablePadding>
                         {el == "Home" ? (
                           <ListItemButton
+                            sx={{ maxHeight: "2em" }}
                             color="inherit"
                             component={Link}
                             to="/"
@@ -102,6 +103,7 @@ function Navbar({ handleThemeClick }) {
                           </ListItemButton>
                         ) : (
                           <ListItemButton
+                            sx={{ maxHeight: "2em" }}
                             color="inherit"
                             component={Link}
                             to={"/" + el.toLowerCase()}
