@@ -7,6 +7,8 @@ import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { blue, indigo } from "@mui/material/colors";
 import { useState } from "react";
 
+import React from "react";
+
 const font = {
   allVariants: {
     fontFamily: "'Montserrat', sans-serif",
@@ -34,7 +36,13 @@ const lightTheme = createTheme({
 });
 
 function App() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const isDarkThemeKey = "darkTheme";
+  const isDarkThemeDefault = localStorage.getItem(isDarkThemeKey) === "true";
+  const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeDefault);
+  React.useEffect(() => {
+    localStorage.setItem(isDarkThemeKey, isDarkTheme);
+  }, [isDarkTheme]);
+
   function handleThemeClick() {
     setIsDarkTheme(!isDarkTheme);
   }
