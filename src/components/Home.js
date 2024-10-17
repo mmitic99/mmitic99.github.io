@@ -15,7 +15,7 @@ function Home() {
         minHeight: "70vh",
       }}
     >
-      <Paper elevation={0}>
+      <Paper elevation={1} sx={{ backgroundColor: "transparent" }}>
         <Typography
           variant="h4"
           gutterBottom

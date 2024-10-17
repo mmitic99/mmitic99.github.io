@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.js";
 import Footbar from "./components/Footbar.js";
 import Home from "./components/Home.js";
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { blue, indigo } from "@mui/material/colors";
+import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import { indigo } from "@mui/material/colors";
 import { useState } from "react";
-
 import React from "react";
+
+const lightBackground = "/img/lightBackground.png";
+const darkBackground = "/img/darkBackground.png";
 
 const font = {
   allVariants: {
@@ -25,10 +27,7 @@ const darkTheme = createTheme({
 const lightTheme = createTheme({
   palette: {
     primary: {
-      light: "#757ce8",
-      main: "#3f50b5",
-      dark: "#002884",
-      contrastText: "#fff",
+      main: "#d1e0ff",
     },
     secondary: indigo,
   },
@@ -47,17 +46,32 @@ function App() {
     setIsDarkTheme(!isDarkTheme);
   }
 
-  return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <CssBaseline />
+  const currentTheme = isDarkTheme ? darkTheme : lightTheme;
+  const backgroundImage = isDarkTheme ? darkBackground : lightBackground;
 
-      <Router>
-        <Navbar handleThemeClick={handleThemeClick} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <Footbar />
-      </Router>
+  return (
+    <ThemeProvider theme={currentTheme}>
+      <CssBaseline />
+      <Box
+        sx={{
+          minHeight: "100vh",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          backgroundImage: `url(${process.env.PUBLIC_URL + backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <Router>
+          <Navbar handleThemeClick={handleThemeClick} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+          <Footbar />
+        </Router>
+      </Box>
     </ThemeProvider>
   );
 }
