@@ -1,6 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
 import SocialMediaBar from "./SocialMediaBar";
+import TransparentPaper from "./common/TransparentPaper";
 
 function Home() {
   return (
@@ -15,7 +16,7 @@ function Home() {
         minHeight: "70vh",
       }}
     >
-      <Paper elevation={1} sx={{ backgroundColor: "transparent" }}>
+      <TransparentPaper elevation={1}>
         <Typography
           variant="h4"
           gutterBottom
@@ -32,7 +33,7 @@ function Home() {
           career in the tech industry by applying my skills and continuously
           learning.
         </Typography>
-      </Paper>
+      </TransparentPaper>
       <SocialMediaBar></SocialMediaBar>
     </Box>
   );
