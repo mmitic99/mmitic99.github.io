@@ -2,20 +2,11 @@ import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
 import SocialMediaBar from "./SocialMediaBar";
 import TransparentPaper from "./common/TransparentPaper";
+import CenteredBox from "./common/CenteredBox";
 
 function Home() {
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      sx={{
-        mx: "12vw",
-        my: "10vh",
-        mt: 10.5,
-        minHeight: "70vh",
-      }}
-    >
+    <CenteredBox>
       <TransparentPaper elevation={1}>
         <Typography
           variant="h4"
@@ -35,7 +26,7 @@ function Home() {
         </Typography>
       </TransparentPaper>
       <SocialMediaBar></SocialMediaBar>
-    </Box>
+    </CenteredBox>
   );
 }
 
