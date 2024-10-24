@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mmitic99.github.io.new/static/css/main.f855e6bc.css",
-    "main.js": "/mmitic99.github.io.new/static/js/main.e79b3393.js",
+    "main.js": "/mmitic99.github.io.new/static/js/main.ab98b929.js",
     "static/js/453.2b29bf75.chunk.js": "/mmitic99.github.io.new/static/js/453.2b29bf75.chunk.js",
     "index.html": "/mmitic99.github.io.new/index.html",
     "main.f855e6bc.css.map": "/mmitic99.github.io.new/static/css/main.f855e6bc.css.map",
-    "main.e79b3393.js.map": "/mmitic99.github.io.new/static/js/main.e79b3393.js.map",
+    "main.ab98b929.js.map": "/mmitic99.github.io.new/static/js/main.ab98b929.js.map",
     "453.2b29bf75.chunk.js.map": "/mmitic99.github.io.new/static/js/453.2b29bf75.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.e79b3393.js"
+    "static/js/main.ab98b929.js"
   ]
 }
