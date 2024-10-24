@@ -7,6 +7,7 @@ import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { indigo } from "@mui/material/colors";
 import { useState } from "react";
 import React from "react";
+import Education from "./components/Education.js";
 
 const lightBackground = "/img/lightBackground.png";
 const darkBackground = "/img/darkBackground.png";
@@ -68,6 +69,7 @@ function App() {
           <Navbar handleThemeClick={handleThemeClick} />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/education" element={<Education />} />
           </Routes>
           <Footbar />
         </Router>

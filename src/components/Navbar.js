@@ -15,6 +15,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Contrast } from "@mui/icons-material";
+import { fullScreen, smallScreen } from "./common/const";
 
 const NavbarButton = styled(Button)({
   textTransform: "none",
@@ -32,8 +33,8 @@ const navElements = [
 ];
 
 function Navbar({ handleThemeClick }) {
-  const small = useMediaQuery("(max-width:719px)");
-  const full = useMediaQuery("(min-width:720px)");
+  const small = useMediaQuery(smallScreen);
+  const full = useMediaQuery(fullScreen);
 
   const [open, setOpen] = useState(false);
   const handleClick = () => {
