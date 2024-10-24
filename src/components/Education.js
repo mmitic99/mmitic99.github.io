@@ -6,14 +6,12 @@ import {
   Grid2,
   List,
   ListItem,
-  ListItemAvatar,
-  ListItemIcon,
   ListItemText,
   Paper,
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { fullScreen, smallScreen } from "./common/const";
+import { smallScreen } from "./common/const";
 import SmallerListItemText from "./common/SmallerListItemText";
 import { Link } from "react-router-dom";
 
@@ -56,39 +54,61 @@ function Education() {
           <Grid2 size={16} alignItems="center" justify="flex-end" order={3}>
             <List>
               <ListItem>
-                <ListItemAvatar>
-                  <Avatar
-                    component={Link}
-                    to="https://ftn.uns.ac.rs"
-                    target="_blank"
-                    src={process.env.PUBLIC_URL + "/img/ftn.png"}
-                    sx={{ width: 56, height: 56, background: "gray" }}
-                  ></Avatar>
-                </ListItemAvatar>
                 <Paper
-                  sx={{ backgroundColor: "transparent", p: "10px", ml: "10px" }}
+                  sx={{
+                    backgroundColor: "transparent",
+                    p: "10px",
+                    width: "100%",
+                  }}
                 >
-                  <ListItemText
-                    primary="Bachelor with Honours in Electrical and Computer Engineering (B.Elec.Comp.Eng.)"
-                    secondary="Univesity of Novi Sad, Faculty of Technical Sciences, Novi Sad | [2018] – [2022]"
-                  />
-                  <List disablePadding sx={{ pl: "20px" }}>
-                    <ListItem disablePadding>
-                      <SmallerListItemText
-                        primary="Relevant Coursework"
-                        secondary="Object Programming, Web Programming, Databases, E-Business System Security, XML and WEB Services"
+                  <Grid2
+                    container
+                    spacing={3}
+                    columns={16}
+                    direction={small ? "column" : "row"}
+                    sx={{
+                      alignItems: "center",
+                      justify: "flex-end",
+                    }}
+                  >
+                    <Grid2 size={small ? 16 : 2} align="center">
+                      <Avatar
+                        component={Link}
+                        to="https://ftn.uns.ac.rs"
+                        target="_blank"
+                        src={process.env.PUBLIC_URL + "/img/ftn.png"}
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          background: "gray",
+                          maxWidth: "120px",
+                        }}
+                      ></Avatar>
+                    </Grid2>
+                    <Grid2 size={small ? 16 : 14}>
+                      <ListItemText
+                        primary="Bachelor with Honours in Electrical and Computer Engineering (B. Elec. Comp. Eng.)"
+                        secondary="Univesity of Novi Sad, Faculty of Technical Sciences, Novi Sad | [2018] – [2022]"
                       />
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <SmallerListItemText
-                        primary="Bachelor with Honours Thesis"
-                        secondary="Protection of Cryptographic Keys Using AWS KMS Services"
-                      />
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <SmallerListItemText primary="GPA" secondary="9.11" />
-                    </ListItem>
-                  </List>
+                      <List disablePadding sx={{ pl: "20px" }}>
+                        <ListItem disablePadding>
+                          <SmallerListItemText
+                            primary="Relevant Coursework"
+                            secondary="Object Programming, Web Programming, Databases, E-Business System Security, XML and WEB Services"
+                          />
+                        </ListItem>
+                        <ListItem disablePadding>
+                          <SmallerListItemText
+                            primary="Bachelor with Honours Thesis"
+                            secondary="Protection of Cryptographic Keys Using AWS KMS Services"
+                          />
+                        </ListItem>
+                        <ListItem disablePadding>
+                          <SmallerListItemText primary="GPA" secondary="9.11" />
+                        </ListItem>
+                      </List>
+                    </Grid2>
+                  </Grid2>
                 </Paper>
               </ListItem>
             </List>
