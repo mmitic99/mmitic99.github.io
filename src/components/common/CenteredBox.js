@@ -8,8 +8,8 @@ const CenteredBox = (props) => (
     alignItems="center"
     sx={{
       mx: "12vw",
-      my: "10vh",
-      mt: 10.5,
+      mb: "10vh",
+      mt: `calc(${props.navbarHeight}px + 10vh)`,
       minHeight: "70vh",
     }}
     {...props}

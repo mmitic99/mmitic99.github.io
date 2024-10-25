@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Contrast } from "@mui/icons-material";
@@ -32,7 +32,7 @@ const navElements = [
   "Contact",
 ];
 
-function Navbar({ handleThemeClick }) {
+function Navbar({ handleThemeClick, onHeightChange }) {
   const small = useMediaQuery(smallScreen);
   const full = useMediaQuery(fullScreen);
 
@@ -40,9 +40,26 @@ function Navbar({ handleThemeClick }) {
   const handleClick = () => {
     setOpen(!open);
   };
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        const newHeight = entry.contentRect.height;
+        onHeightChange(newHeight);
+      }
+    });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [onHeightChange]);
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" ref={ref}>
       <Toolbar>
         {small && (
           <>
@@ -92,7 +109,7 @@ function Navbar({ handleThemeClick }) {
                   <List>
                     {navElements.map((el) => (
                       <ListItem key={el} disablePadding>
-                        {el == "Home" ? (
+                        {el === "Home" ? (
                           <ListItemButton
                             sx={{ maxHeight: "2em" }}
                             color="inherit"
@@ -139,7 +156,7 @@ function Navbar({ handleThemeClick }) {
             </Typography>
 
             {navElements.map((el) =>
-              el == "Home" ? (
+              el === "Home" ? (
                 <NavbarButton color="inherit" component={Link} to="/">
                   {el}
                 </NavbarButton>

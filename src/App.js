@@ -50,6 +50,11 @@ function App() {
   const currentTheme = isDarkTheme ? darkTheme : lightTheme;
   const backgroundImage = isDarkTheme ? darkBackground : lightBackground;
 
+  const [navbarHeight, setNavbarHeight] = useState(0);
+  function handleNavbarHeightChange(newHeight) {
+    setNavbarHeight(newHeight);
+  }
+
   return (
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
@@ -66,9 +71,12 @@ function App() {
         }}
       >
         <Router>
-          <Navbar handleThemeClick={handleThemeClick} />
+          <Navbar
+            handleThemeClick={handleThemeClick}
+            onHeightChange={handleNavbarHeightChange}
+          />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home navbarHeight={navbarHeight} />} />
             <Route path="/education" element={<Education />} />
           </Routes>
           <Footbar />

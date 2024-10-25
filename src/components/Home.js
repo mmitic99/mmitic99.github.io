@@ -5,10 +5,10 @@ import TransparentPaper from "./common/TransparentPaper";
 import CenteredBox from "./common/CenteredBox";
 import { smallScreen } from "./common/const";
 
-function Home() {
+function Home({ navbarHeight }) {
   const small = useMediaQuery(smallScreen);
   return (
-    <CenteredBox>
+    <CenteredBox navbarHeight={navbarHeight}>
       <TransparentPaper>
         <Grid2
           container
