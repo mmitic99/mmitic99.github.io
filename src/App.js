@@ -8,6 +8,7 @@ import { indigo } from "@mui/material/colors";
 import { useState } from "react";
 import React from "react";
 import Education from "./components/Education.js";
+import Experience from "./components/Experience.js";
 
 const lightBackground = "/img/lightBackground.png";
 const darkBackground = "/img/darkBackground.png";
@@ -80,6 +81,10 @@ function App() {
             <Route
               path="/education"
               element={<Education navbarHeight={navbarHeight} />}
+            />
+            <Route
+              path="/experience"
+              element={<Experience navbarHeight={navbarHeight} />}
             />
           </Routes>
           <Footbar />

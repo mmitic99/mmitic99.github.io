@@ -30,26 +30,21 @@ function Education({ navbarHeight }) {
             justify: "flex-end",
           }}
         >
-          <Grid2
-            size={small ? 16 : 8}
-            alignItems="center"
-            justify="flex-end"
-            order={small ? 2 : 1}
-          >
-            <img
-              src={process.env.PUBLIC_URL + "/img/education.png"}
-              style={{ width: "100%", height: "100%" }}
-            />
-          </Grid2>
-          <Grid2
-            size={small ? 16 : 8}
-            alignItems="center"
-            justify="center"
-            order={small ? 1 : 2}
-          >
+          <Grid2 size={small ? 16 : 8} alignItems="center" justify="center">
             <Typography variant="h4" justifyContent="center" align="center">
               Education
             </Typography>
+          </Grid2>
+          <Grid2 size={small ? 16 : 8} alignItems="center" justify="flex-end">
+            <img
+              src={process.env.PUBLIC_URL + "/img/education.png"}
+              style={{
+                width: "100%",
+                height: "100%",
+                maxHeight: "400px",
+                maxWidth: "400px",
+              }}
+            />
           </Grid2>
           <Grid2 size={16} alignItems="center" justify="flex-end" order={3}>
             <List>
@@ -73,6 +68,7 @@ function Education({ navbarHeight }) {
                   >
                     <Grid2 size={small ? 16 : 2} align="center">
                       <Avatar
+                        variant="square"
                         component={Link}
                         to="https://ftn.uns.ac.rs"
                         target="_blank"
