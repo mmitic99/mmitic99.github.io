@@ -15,10 +15,10 @@ import { smallScreen } from "./common/const";
 import SmallerListItemText from "./common/SmallerListItemText";
 import { Link } from "react-router-dom";
 
-function Education() {
+function Education({ navbarHeight }) {
   const small = useMediaQuery(smallScreen);
   return (
-    <CenteredBox>
+    <CenteredBox navbarHeight={navbarHeight}>
       <TransparentPaper>
         <Grid2
           container

@@ -77,7 +77,10 @@ function App() {
           />
           <Routes>
             <Route path="/" element={<Home navbarHeight={navbarHeight} />} />
-            <Route path="/education" element={<Education />} />
+            <Route
+              path="/education"
+              element={<Education navbarHeight={navbarHeight} />}
+            />
           </Routes>
           <Footbar />
         </Router>
