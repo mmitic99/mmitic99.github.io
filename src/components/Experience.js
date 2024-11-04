@@ -67,6 +67,7 @@ function Experience({ navbarHeight }) {
               </ListItem>
               <ListItem>
                 <Paper
+                  elevation={3}
                   sx={{
                     backgroundColor: "transparent",
                     p: "10px",

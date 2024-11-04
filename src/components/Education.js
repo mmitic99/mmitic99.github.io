@@ -50,6 +50,7 @@ function Education({ navbarHeight }) {
             <List>
               <ListItem>
                 <Paper
+                  elevation={3}
                   sx={{
                     backgroundColor: "transparent",
                     p: "10px",

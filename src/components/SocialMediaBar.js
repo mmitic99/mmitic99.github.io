@@ -18,16 +18,16 @@ function SocialMediaBar() {
     >
       <ButtonGroup orientation="vertical">
         <IconButton component={Link} href={githubLink} target="_blank">
-          <GitHub fontSize="small"></GitHub>
+          <GitHub fontSize="medium"></GitHub>
         </IconButton>
         <IconButton component={Link} href={linkedInLink} target="_blank">
-          <LinkedIn fontSize="small"></LinkedIn>
+          <LinkedIn fontSize="medium"></LinkedIn>
         </IconButton>
         <IconButton component={Link} href={instagramLink} target="_blank">
-          <Instagram fontSize="small"></Instagram>
+          <Instagram fontSize="medium"></Instagram>
         </IconButton>
         <IconButton component={Link} href={googleLink} target="_blank">
-          <Google fontSize="small"></Google>
+          <Google fontSize="medium"></Google>
         </IconButton>
       </ButtonGroup>
     </div>

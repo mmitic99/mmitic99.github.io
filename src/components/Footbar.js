@@ -14,7 +14,7 @@ function Footbar() {
         textAlign: "center",
       }}
     >
-      <Typography variant="caption" fontSize={10} align="center">
+      <Typography variant="caption" fontSize={12} align="center">
         © Copyright {year}. Made by <strong>Mihajlo Mitić</strong>
       </Typography>
     </AppBar>

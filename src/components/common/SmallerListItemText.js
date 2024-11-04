@@ -3,8 +3,8 @@ import React from "react";
 
 const SmallerListItemText = (props) => (
   <ListItemText
-    primaryTypographyProps={{ fontSize: "12px" }}
-    secondaryTypographyProps={{ fontSize: "10px" }}
+    primaryTypographyProps={{ fontSize: "14px" }}
+    secondaryTypographyProps={{ fontSize: "12px" }}
     {...props}
   />
 );

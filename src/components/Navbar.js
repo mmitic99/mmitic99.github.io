@@ -19,7 +19,7 @@ import { fullScreen, smallScreen } from "./common/const";
 
 const NavbarButton = styled(Button)({
   textTransform: "none",
-  fontSize: 14,
+  fontSize: 16,
 });
 
 const navElements = [
@@ -73,7 +73,7 @@ function Navbar({ handleThemeClick, onHeightChange }) {
             >
               <ListItem disableGutters disablePadding>
                 <Typography
-                  variant="h6"
+                  variant="h5"
                   sx={{
                     flexGrow: 1,
                     textDecoration: "none",
@@ -142,7 +142,7 @@ function Navbar({ handleThemeClick, onHeightChange }) {
         {full && (
           <>
             <Typography
-              variant="h6"
+              variant="h5"
               sx={{
                 flexGrow: 1,
                 textDecoration: "none",
