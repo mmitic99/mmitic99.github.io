@@ -138,7 +138,6 @@ function Experience({ navbarHeight }) {
           </Grid2>
         </Grid2>
       </TransparentPaper>
-      <SocialMediaBar></SocialMediaBar>
     </CenteredBox>
   );
 }

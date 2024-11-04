@@ -9,6 +9,7 @@ import { useState } from "react";
 import React from "react";
 import Education from "./components/Education.js";
 import Experience from "./components/Experience.js";
+import Contact from "./components/Contact.js";
 
 const lightBackground = "/img/lightBackground.png";
 const darkBackground = "/img/darkBackground.png";
@@ -85,6 +86,11 @@ function App() {
             <Route
               path="/experience"
               element={<Experience navbarHeight={navbarHeight} />}
+            />
+
+            <Route
+              path="/contact"
+              element={<Contact navbarHeight={navbarHeight} />}
             />
           </Routes>
           <Footbar />

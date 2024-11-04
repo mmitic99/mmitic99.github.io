@@ -7,7 +7,7 @@ const linkedInLink = "https://www.linkedin.com/in/mihajlomitic/";
 const instagramLink = "https://www.instagram.com/mmitic_99/";
 const googleLink = "mailto:mihajlomiticmiki@gmail.com";
 
-function SocialMediaBar() {
+function SocialMediaBar(props) {
   return (
     <div
       style={{
@@ -15,8 +15,9 @@ function SocialMediaBar() {
         top: "40vh",
         left: 0,
       }}
+      {...props}
     >
-      <ButtonGroup orientation="vertical">
+      <ButtonGroup orientation={props.horizontal ? "horizontal" : "vertical"}>
         <IconButton component={Link} href={githubLink} target="_blank">
           <GitHub fontSize="medium"></GitHub>
         </IconButton>
