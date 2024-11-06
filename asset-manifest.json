@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mmitic99.github.io.new/static/css/main.f855e6bc.css",
-    "main.js": "/mmitic99.github.io.new/static/js/main.8b3e6b66.js",
-    "static/js/453.2b29bf75.chunk.js": "/mmitic99.github.io.new/static/js/453.2b29bf75.chunk.js",
-    "index.html": "/mmitic99.github.io.new/index.html",
-    "main.f855e6bc.css.map": "/mmitic99.github.io.new/static/css/main.f855e6bc.css.map",
-    "main.8b3e6b66.js.map": "/mmitic99.github.io.new/static/js/main.8b3e6b66.js.map",
-    "453.2b29bf75.chunk.js.map": "/mmitic99.github.io.new/static/js/453.2b29bf75.chunk.js.map"
+    "main.css": "/static/css/main.7eee306d.css",
+    "main.js": "/static/js/main.1c81f0ac.js",
+    "static/js/488.5a47d54c.chunk.js": "/static/js/488.5a47d54c.chunk.js",
+    "index.html": "/index.html",
+    "main.7eee306d.css.map": "/static/css/main.7eee306d.css.map",
+    "main.1c81f0ac.js.map": "/static/js/main.1c81f0ac.js.map",
+    "488.5a47d54c.chunk.js.map": "/static/js/488.5a47d54c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.8b3e6b66.js"
+    "static/css/main.7eee306d.css",
+    "static/js/main.1c81f0ac.js"
   ]
 }
