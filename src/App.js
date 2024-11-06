@@ -11,6 +11,9 @@ import Education from "./components/Education.js";
 import Experience from "./components/Experience.js";
 import Contact from "./components/Contact.js";
 
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+
 const lightBackground = "/img/lightBackground.png";
 const darkBackground = "/img/darkBackground.png";
 
@@ -60,6 +63,7 @@ function App() {
   return (
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
+      <ToastContainer autoClose={3000} theme={isDarkTheme ? "dark" : "light"} />
       <Box
         sx={{
           minHeight: "100vh",
