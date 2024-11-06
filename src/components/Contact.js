@@ -1,20 +1,12 @@
-import {
-  Alert,
-  Button,
-  Grid2,
-  TextField,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
-import React, { useState } from "react";
+import { Button, Grid2, TextField, Typography } from "@mui/material";
+import React from "react";
 import TransparentPaper from "./common/TransparentPaper";
 import CenteredBox from "./common/CenteredBox";
-import { smallScreen } from "./common/const";
 import SocialMediaBar from "./SocialMediaBar";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 const initialValues = { name: "", email: "", message: "" };
 const handleSubmit = (values, actions) => {
@@ -53,25 +45,24 @@ function Contact({ navbarHeight }) {
     process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
     process.env.REACT_APP_EMAILJS_PUB_KEY
   );
-  const small = useMediaQuery(smallScreen);
+
   return (
     <CenteredBox navbarHeight={navbarHeight}>
       <TransparentPaper>
         <Grid2
           container
-          spacing={small ? 0 : 2}
-          columns={16}
-          direction={small ? "column" : "row"}
+          spacing={{ xs: 0, md: 2 }}
+          direction={{ xs: "column", md: "row" }}
           sx={{
             alignItems: "center",
             justify: "flex-end",
           }}
         >
           <Grid2
-            size={small ? 16 : 8}
+            size={{ xs: 12, md: 6 }}
             alignItems="center"
             justify="flex-end"
-            order={small ? 2 : 1}
+            order={{ xs: 2, md: 1 }}
           >
             <div style={{ width: "100%", height: "100%" }}>
               <img
@@ -82,29 +73,23 @@ function Contact({ navbarHeight }) {
             </div>
           </Grid2>
           <Grid2
-            size={small ? 16 : 8}
+            size={{ xs: 12, md: 6 }}
             alignItems="center"
             justify="center"
-            order={small ? 1 : 2}
+            order={{ xs: 1, md: 2 }}
           >
             <Typography variant="h4" justifyContent="center" align="center">
               Contact
             </Typography>
           </Grid2>
-          <Grid2 size={16} alignItems="center" justify="flex-end" order={3}>
-            <Grid2
-              container
-              size={16}
-              justifyContent="center"
-              align="center"
-              spacing={2}
-            >
-              <Grid2 size={16} justifyContent="center" align="center">
+          <Grid2 alignItems="center" justify="flex-end" order={3}>
+            <Grid2 container justifyContent="center" align="center" spacing={2}>
+              <Grid2 justifyContent="center" align="center" size={{ xs: 12 }}>
                 <Typography variant="body1">
                   Feel free to get in touch with me via social media or email.
                 </Typography>
               </Grid2>
-              <Grid2 size={16} justifyContent="center" align="center">
+              <Grid2 justifyContent="center" align="center" size={{ xs: 12 }}>
                 <SocialMediaBar
                   horizontal="true"
                   style={{
@@ -114,17 +99,21 @@ function Contact({ navbarHeight }) {
                 />
               </Grid2>
               <Grid2
-                size={16}
                 justifyContent="center"
                 align="center"
                 sx={{ mb: "2vh" }}
+                size={{ xs: 12 }}
               >
                 <Typography variant="body1">
                   Or simply submit the form below, and I'll get back to you as
                   soon as possible.
                 </Typography>
               </Grid2>
-              <Grid2 size={8} justifyContent="center" align="center">
+              <Grid2
+                size={{ xs: 12, md: 6 }}
+                justifyContent="center"
+                align="center"
+              >
                 <Formik
                   initialValues={initialValues}
                   onSubmit={handleSubmit}
@@ -143,12 +132,11 @@ function Contact({ navbarHeight }) {
                     <Form>
                       <Grid2
                         container
-                        size={8}
                         spacing={2}
                         justifyContent="center"
                         align="center"
                       >
-                        <Grid2 item size={12}>
+                        <Grid2 item size={{ xs: 10, md: 12 }}>
                           <TextField
                             required
                             fullWidth
@@ -161,7 +149,7 @@ function Contact({ navbarHeight }) {
                             helperText={touched.name && errors.name}
                           />
                         </Grid2>
-                        <Grid2 item size={12}>
+                        <Grid2 item size={{ xs: 10, md: 12 }}>
                           <TextField
                             required
                             fullWidth
@@ -174,7 +162,7 @@ function Contact({ navbarHeight }) {
                             helperText={touched.email && errors.email}
                           />
                         </Grid2>
-                        <Grid2 item size={12}>
+                        <Grid2 item size={{ xs: 10, md: 12 }}>
                           <TextField
                             multiline
                             minRows={4}
@@ -190,7 +178,7 @@ function Contact({ navbarHeight }) {
                             helperText={touched.message && errors.message}
                           />
                         </Grid2>
-                        <Grid2 item size={12}>
+                        <Grid2 item size={{ xs: 10, md: 12 }}>
                           <Button
                             type="submit"
                             disabled={isSubmitting || !isValid || !dirty}

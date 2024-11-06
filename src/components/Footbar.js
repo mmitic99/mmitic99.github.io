@@ -1,4 +1,4 @@
-import { AppBar, Box, Typography } from "@mui/material";
+import { AppBar, Typography } from "@mui/material";
 import React from "react";
 
 function Footbar() {

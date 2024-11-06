@@ -9,33 +9,30 @@ import {
   ListItemText,
   Paper,
   Typography,
-  useMediaQuery,
 } from "@mui/material";
-import { smallScreen } from "./common/const";
 import SmallerListItemText from "./common/SmallerListItemText";
 import { Link } from "react-router-dom";
 
 function Education({ navbarHeight }) {
-  const small = useMediaQuery(smallScreen);
   return (
     <CenteredBox navbarHeight={navbarHeight}>
       <TransparentPaper>
         <Grid2
           container
-          spacing={small ? 0 : 2}
+          spacing={{ xs: 0, md: 2 }}
           columns={16}
-          direction={small ? "column" : "row"}
+          direction={{ xs: "column", md: "row" }}
           sx={{
             alignItems: "center",
             justify: "flex-end",
           }}
         >
-          <Grid2 size={small ? 16 : 8} alignItems="center" justify="center">
+          <Grid2 size={{ xs: 12, md: 6 }} alignItems="center" justify="center">
             <Typography variant="h4" justifyContent="center" align="center">
               Education
             </Typography>
           </Grid2>
-          <Grid2 size={small ? 16 : 8} alignItems="center" justify="flex-end">
+          <Grid2 ize={{ xs: 12, md: 6 }} alignItems="center" justify="flex-end">
             <img
               src={process.env.PUBLIC_URL + "/img/education.png"}
               style={{
@@ -46,7 +43,7 @@ function Education({ navbarHeight }) {
               }}
             />
           </Grid2>
-          <Grid2 size={16} alignItems="center" justify="flex-end" order={3}>
+          <Grid2 alignItems="center" justify="flex-end" order={3}>
             <List>
               <ListItem>
                 <Paper
@@ -60,14 +57,13 @@ function Education({ navbarHeight }) {
                   <Grid2
                     container
                     spacing={3}
-                    columns={16}
-                    direction={small ? "column" : "row"}
+                    direction={{ xs: "column", md: "row" }}
                     sx={{
                       alignItems: "center",
                       justify: "flex-end",
                     }}
                   >
-                    <Grid2 size={small ? 16 : 2} align="center">
+                    <Grid2 size={{ xs: 12, md: 2 }} align="center">
                       <Avatar
                         variant="square"
                         component={Link}
@@ -82,7 +78,7 @@ function Education({ navbarHeight }) {
                         }}
                       ></Avatar>
                     </Grid2>
-                    <Grid2 size={small ? 16 : 14}>
+                    <Grid2 size={{ xs: 12, md: 10 }}>
                       <ListItemText
                         primary="Bachelor with Honours in Electrical and Computer Engineering (B. Elec. Comp. Eng.)"
                         secondary="Univesity of Novi Sad, Faculty of Technical Sciences, Novi Sad | [2018] – [2022]"

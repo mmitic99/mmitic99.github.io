@@ -15,7 +15,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Contrast } from "@mui/icons-material";
-import { fullScreen, smallScreen } from "./common/const";
+import { smallScreen } from "./common/const";
 
 const NavbarButton = styled(Button)({
   textTransform: "none",
@@ -34,8 +34,6 @@ const navElements = [
 
 function Navbar({ handleThemeClick, onHeightChange }) {
   const small = useMediaQuery(smallScreen);
-  const full = useMediaQuery(fullScreen);
-
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -61,7 +59,7 @@ function Navbar({ handleThemeClick, onHeightChange }) {
   return (
     <AppBar position="fixed" ref={ref}>
       <Toolbar>
-        {small && (
+        {small ? (
           <>
             <List
               sx={{
@@ -137,9 +135,7 @@ function Navbar({ handleThemeClick, onHeightChange }) {
               </ListItem>
             </List>
           </>
-        )}
-
-        {full && (
+        ) : (
           <>
             <Typography
               variant="h5"

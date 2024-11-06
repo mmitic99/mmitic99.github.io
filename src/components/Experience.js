@@ -5,23 +5,18 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   Paper,
   Typography,
-  useMediaQuery,
 } from "@mui/material";
 import React, { useState } from "react";
-import SocialMediaBar from "./SocialMediaBar";
 import TransparentPaper from "./common/TransparentPaper";
 import CenteredBox from "./common/CenteredBox";
-import { smallScreen } from "./common/const";
-import { Link } from "react-router-dom";
 import SmallerListItemText from "./common/SmallerListItemText";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 function Experience({ navbarHeight }) {
-  const small = useMediaQuery(smallScreen);
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -31,19 +26,18 @@ function Experience({ navbarHeight }) {
       <TransparentPaper>
         <Grid2
           container
-          spacing={small ? 0 : 2}
-          columns={16}
-          direction={small ? "column" : "row"}
+          spacing={{ xs: 0, md: 2 }}
+          direction={{ xs: "column", md: "row" }}
           sx={{
             alignItems: "center",
             justify: "flex-end",
           }}
         >
           <Grid2
-            size={small ? 16 : 8}
+            size={{ xs: 12, md: 6 }}
             alignItems="center"
             justify="flex-end"
-            order={small ? 2 : 1}
+            order={{ xs: 2, md: 1 }}
           >
             <img
               src={process.env.PUBLIC_URL + "/img/experience.png"}
@@ -51,16 +45,16 @@ function Experience({ navbarHeight }) {
             />
           </Grid2>
           <Grid2
-            size={small ? 16 : 8}
+            size={{ xs: 12, md: 6 }}
             alignItems="center"
             justify="center"
-            order={small ? 1 : 2}
+            order={{ xs: 1, md: 2 }}
           >
             <Typography variant="h4" justifyContent="center" align="center">
               Experience
             </Typography>
           </Grid2>
-          <Grid2 size={16} alignItems="center" justify="flex-end" order={3}>
+          <Grid2 alignItems="center" justify="flex-end" order={3}>
             <List>
               <ListItem sx={{ display: "flex", justifyContent: "flex-end" }}>
                 <Typography variant="h5">Internships</Typography>
@@ -77,14 +71,13 @@ function Experience({ navbarHeight }) {
                   <Grid2
                     container
                     spacing={3}
-                    columns={16}
-                    direction={small ? "column" : "row"}
+                    direction={{ xs: "column", md: "row" }}
                     sx={{
                       alignItems: "center",
                       justify: "flex-end",
                     }}
                   >
-                    <Grid2 size={small ? 16 : 2} align="center">
+                    <Grid2 size={{ xs: 12, md: 2 }} align="center">
                       <Avatar
                         variant="square"
                         component={Link}
@@ -99,7 +92,7 @@ function Experience({ navbarHeight }) {
                         }}
                       ></Avatar>
                     </Grid2>
-                    <Grid2 size={small ? 16 : 14}>
+                    <Grid2 size={{ xs: 12, md: 10 }}>
                       <ListItemText
                         primary="Java Student Internship"
                         secondary="Levi9 Technology Services, Novi Sad | [March 2022] – [April 2022]"
