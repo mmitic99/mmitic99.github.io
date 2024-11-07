@@ -53,17 +53,11 @@ function Contact({ navbarHeight }) {
           container
           spacing={{ xs: 0, md: 2 }}
           direction={{ xs: "column", md: "row" }}
-          sx={{
-            alignItems: "center",
-            justify: "flex-end",
-          }}
+          justifyContent="center"
+          align="center"
+          alignItems="center"
         >
-          <Grid2
-            size={{ xs: 12, md: 6 }}
-            alignItems="center"
-            justify="flex-end"
-            order={{ xs: 2, md: 1 }}
-          >
+          <Grid2 size={{ xs: 12, md: 6 }} order={{ xs: 2, md: 1 }}>
             <div style={{ width: "100%", height: "100%" }}>
               <img
                 src={process.env.PUBLIC_URL + "/img/contact.png"}
@@ -72,17 +66,12 @@ function Contact({ navbarHeight }) {
               />
             </div>
           </Grid2>
-          <Grid2
-            size={{ xs: 12, md: 6 }}
-            alignItems="center"
-            justify="center"
-            order={{ xs: 1, md: 2 }}
-          >
+          <Grid2 size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 2 }}>
             <Typography variant="h4" justifyContent="center" align="center">
               Contact
             </Typography>
           </Grid2>
-          <Grid2 alignItems="center" justify="flex-end" order={3}>
+          <Grid2 order={3}>
             <Grid2 container justifyContent="center" align="center" spacing={2}>
               <Grid2 justifyContent="center" align="center" size={{ xs: 12 }}>
                 <Typography variant="body1">

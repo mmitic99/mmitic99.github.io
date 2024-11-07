@@ -20,19 +20,18 @@ function Education({ navbarHeight }) {
         <Grid2
           container
           spacing={{ xs: 0, md: 2 }}
-          columns={16}
+          size={{ xs: 12 }}
           direction={{ xs: "column", md: "row" }}
-          sx={{
-            alignItems: "center",
-            justify: "flex-end",
-          }}
+          justifyContent="center"
+          align="center"
+          alignItems="center"
         >
-          <Grid2 size={{ xs: 12, md: 6 }} alignItems="center" justify="center">
+          <Grid2 size={{ xs: 12, md: 6 }}>
             <Typography variant="h4" justifyContent="center" align="center">
               Education
             </Typography>
           </Grid2>
-          <Grid2 ize={{ xs: 12, md: 6 }} alignItems="center" justify="flex-end">
+          <Grid2 size={{ xs: 12, md: 6 }}>
             <img
               src={process.env.PUBLIC_URL + "/img/education.png"}
               style={{
@@ -43,7 +42,7 @@ function Education({ navbarHeight }) {
               }}
             />
           </Grid2>
-          <Grid2 alignItems="center" justify="flex-end" order={3}>
+          <Grid2 order={3}>
             <List>
               <ListItem>
                 <Paper

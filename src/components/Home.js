@@ -12,28 +12,17 @@ function Home({ navbarHeight }) {
           container
           spacing={{ xs: 0, md: 2 }}
           direction={{ xs: "column", md: "row" }}
-          sx={{
-            alignItems: "center",
-            justify: "flex-end",
-          }}
+          justifyContent="center"
+          align="center"
+          alignItems="center"
         >
-          <Grid2
-            size={{ xs: 12, md: 6 }}
-            alignItems="center"
-            justify="flex-end"
-            order={{ xs: 2, md: 1 }}
-          >
+          <Grid2 size={{ xs: 12, md: 6 }} order={{ xs: 2, md: 1 }}>
             <img
               src={process.env.PUBLIC_URL + "/img/home.png"}
               style={{ width: "100%", height: "100%" }}
             />
           </Grid2>
-          <Grid2
-            size={{ xs: 12, md: 6 }}
-            alignItems="center"
-            justify="center"
-            order={{ xs: 1, md: 2 }}
-          >
+          <Grid2 size={{ xs: 12, md: 6 }} order={{ xs: 1, md: 2 }}>
             <Typography
               variant="h4"
               gutterBottom
