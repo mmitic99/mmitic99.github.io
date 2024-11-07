@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Portfolio Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a personal portfolio website developed using React and Material-UI. The website showcases my experience, projects, skills, and contact information. It is designed to be responsive and user-friendly, providing visitors with easy navigation and a clear representation of my work and background.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Home Page**: Introduction and brief overview.
+- **Education Page**: Academic background with relevant details.
+- **Experience Page**: Internships and professional experience.
+- **Projects Page**: Highlights of significant projects with descriptions.
+- **Skills Page**: A list of technical skills and competencies.
+- **About Page**: Personal background and detailed information.
+- **Contact Page**: Form for visitors to reach out.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- Material-UI
+- Formik and Yup for form handling and validation
+- EmailJS for handling contact form submissions
 
-### `npm test`
+## How to Run Locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone this repository.
+2. Run `npm install` to install dependencies.
+3. Use `npm start` to start the development server.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Portfolio Projekat
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Pregled
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ovaj projekat je lična portfolio veb stranica napravljena koristeći React i Material-UI. Veb stranica prikazuje moje iskustvo, projekte, veštine i kontakt informacije. Dizajnirana je tako da bude responzivna i laka za korišćenje, pružajući posetiocima jasnu navigaciju i pregled mog rada i biografije.
 
-### `npm run eject`
+## Osobine
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Početna strana**: Uvod i kratak pregled.
+- **Obrazovanje**: Akademska pozadina sa relevantnim detaljima.
+- **Iskustvo**: Prakse i profesionalno iskustvo.
+- **Projekti**: Prikaz značajnih projekata sa opisima.
+- **Veštine**: Lista tehničkih veština i kompetencija.
+- **O meni**: Lične informacije i detaljan prikaz.
+- **Kontakt**: Formular za posetioce da stupe u kontakt.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Korišćene tehnologije
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React
+- Material-UI
+- Formik i Yup za rukovanje i validaciju formi
+- EmailJS za slanje podataka sa kontakt forme
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Kako pokrenuti lokalno
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Klonirajte ovaj repozitorijum.
+2. Pokrenite `npm install` za instalaciju zavisnosti.
+3. Koristite `npm start` za pokretanje lokalnog servera.
