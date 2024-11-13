@@ -37,6 +37,7 @@ const lightTheme = createTheme({
       main: "#d1e0ff",
     },
     secondary: indigo,
+    background: { default: "#d1e0ff", paper: "#d1e0ff" },
   },
   typography: font,
 });
