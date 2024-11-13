@@ -41,7 +41,7 @@ function Projects({ navbarHeight }) {
               Projects
             </Typography>
           </Grid2>
-          <Grid2 size={{ xs: 12, md: 6 }}>
+          <Grid2 size={{ xs: 12, md: 6 }} sx={{ p: "10vh" }}>
             <img
               src={process.env.PUBLIC_URL + "/img/projects.png"}
               style={{
@@ -54,7 +54,7 @@ function Projects({ navbarHeight }) {
           </Grid2>
           <Grid2 order={3}>
             <Grid2 container>
-              {isGithubProjcectsFetched && (
+              {isGithubProjcectsFetched && githubProjects.length !== 0 && (
                 <>
                   <Grid2 item size={{ xs: 12 }}>
                     <Typography variant="h6">

@@ -31,7 +31,7 @@ function Education({ navbarHeight }) {
               Education
             </Typography>
           </Grid2>
-          <Grid2 size={{ xs: 12, md: 6 }}>
+          <Grid2 size={{ xs: 12, md: 6 }} sx={{ p: "10vh" }}>
             <img
               src={process.env.PUBLIC_URL + "/img/education.png"}
               style={{
