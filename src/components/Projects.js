@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 import CenteredBox from "./common/CenteredBox";
 import TransparentPaper from "./common/TransparentPaper";
-import { Grid2, Paper, Typography } from "@mui/material";
+import {
+  Grid2,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Paper,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import Carousel from "react-material-ui-carousel";
 import { Link } from "react-router-dom";
+import { Circle } from "@mui/icons-material";
 
 function formatDate(string) {
   var options = { year: "numeric", month: "short", day: "numeric" };
@@ -29,6 +39,50 @@ function Projects({ navbarHeight }) {
     };
     fetchProjects();
   }, []);
+
+  const projects = [
+    {
+      name: "Software Specification and Modeling",
+      languages: "C#-WPF",
+      startEndDate: "02/2021 - 06/2021",
+      details: [
+        "In a project, it was necessary to create an informational system for a hospital. We had several roles, and I held the role of a secretary, managing CRUD operations involving patients and doctors, as well as scheduling appointments and surgeries.",
+      ],
+      githubLink: "https://github.com/mmitic99/IS_Bolnica",
+    },
+    {
+      name: "Software Design",
+      languages: "C# / ASP.NET - Angular",
+      startEndDate: "10/2021 – 01/2022",
+      details: [
+        "Continuing from the previous project, multiple teams were involved. My team was responsible for integrating applications, as we needed to extend the scope to include a pharmacy information system alongside the hospital information system.",
+        "Database: PostgreSQL",
+      ],
+      githubLink: "https://github.com/PSW-Organization-8",
+    },
+    {
+      name: "Internet software architectures",
+      languages: "Java / SpringBoot - Angular",
+      startEndDate: "10/2021 – 01/2022",
+      details: [
+        "Within the project task, it was necessary to implement a web application that serves as a centralized system through which users can reserve cottages, boats, and fishing instructors. The primary purpose of the application is to maintain records of advertisers, registered entities, reservations, adventure scheduling slots, users, and their profiles.",
+        "Monolithic architecture, Database: PostgreSQL, Testing: Mockito, JUnit",
+      ],
+      githubLink: "https://github.com/mmitic99/ISA_Projekat",
+    },
+    {
+      name: "Dislinkt",
+      languages: "Go, Java / SpringBoot - Angular",
+      startEndDate: "03/2022 – 07/2022",
+      details: [
+        'Project from "XML and web services" and "Security in e-business systems"',
+        "It was necessary to develop a business social network to connect employers and individuals seeking employment. Additionally, from a security standpoint, implementing HTTPS, data validation, as well as authentication and access control were essential tasks.",
+        "Microservice architecture, Database: MongoDB, Neo4j, PostgreSQL, Other: Docker",
+      ],
+      githubLink: "https://github.com/XWS-BSEP-TIM1-2022",
+    },
+  ];
+
   return (
     <CenteredBox navbarHeight={navbarHeight}>
       <TransparentPaper>
@@ -65,9 +119,9 @@ function Projects({ navbarHeight }) {
                     <Typography variant="h6">My GitHub Projects</Typography>
                   </Grid2>
                   <Grid2 item size={{ xs: 12 }}>
-                    <Carousel sx={{ width: "400px" }}>
+                    <Carousel>
                       {githubProjects.map((project) => (
-                        <Paper sx={{ width: "350px", p: "10px" }}>
+                        <Paper sx={{ height: "15ex", p: "10px" }}>
                           <Typography
                             variant="h6"
                             component={Link}
@@ -99,10 +153,67 @@ function Projects({ navbarHeight }) {
                 </>
               )}
               <Grid2 item size={{ xs: 12 }}>
-                opis proj{" "}
-                {
-                  //TODO:
-                }
+                <Typography variant="h6">Key Projects</Typography>
+              </Grid2>
+              <Grid2 item size={{ xs: 12 }}>
+                <List>
+                  {projects.map((project) => (
+                    <ListItem>
+                      <Paper
+                        elevation={3}
+                        sx={{
+                          p: "10px",
+                          width: "100%",
+                        }}
+                      >
+                        <List disablePadding>
+                          <ListItem>
+                            <ListItemText
+                              justifyContent="center"
+                              align="center"
+                              alignItems="center"
+                            >
+                              <strong>{project.name}</strong>
+                            </ListItemText>
+                          </ListItem>
+                          <ListItem>
+                            <ListItemText
+                              justifyContent="center"
+                              align="center"
+                              alignItems="center"
+                            >
+                              <Grid2
+                                container
+                                justifyContent="center"
+                                align="center"
+                                alignItems="center"
+                                spacing={2}
+                              >
+                                <Grid2 sx={6}>{project.startEndDate}</Grid2>
+                                <Grid2>|</Grid2>
+                                <Grid2 sx={6}>{project.languages}</Grid2>
+                              </Grid2>
+                            </ListItemText>
+                          </ListItem>
+                          <ListItem>
+                            <List disa>
+                              {project.details.map((detail) => (
+                                <ListItem disableGutters disablePadding>
+                                  <ListItemButton>
+                                    <ListItemIcon>
+                                      <Circle fontSize="small" />
+                                    </ListItemIcon>
+                                  </ListItemButton>
+                                  <ListItemText>{detail}</ListItemText>
+                                </ListItem>
+                              ))}
+                            </List>
+                          </ListItem>
+                        </List>
+                      </Paper>
+                    </ListItem>
+                  ))}
+                </List>
               </Grid2>
             </Grid2>
           </Grid2>
