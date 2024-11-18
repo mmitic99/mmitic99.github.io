@@ -196,15 +196,13 @@ function Projects({ navbarHeight }) {
                             </ListItemText>
                           </ListItem>
                           <ListItem>
-                            <List disa>
+                            <List>
                               {project.details.map((detail) => (
-                                <ListItem disableGutters disablePadding>
-                                  <ListItemButton>
-                                    <ListItemIcon>
-                                      <Circle fontSize="small" />
-                                    </ListItemIcon>
-                                  </ListItemButton>
-                                  <ListItemText>{detail}</ListItemText>
+                                <ListItem disablePadding>
+                                  <ListItemIcon>
+                                    <Circle fontSize="small" />
+                                  </ListItemIcon>
+                                  <ListItemText primary={detail} />
                                 </ListItem>
                               ))}
                             </List>
