@@ -3,7 +3,9 @@ import CenteredBox from "./common/CenteredBox";
 import TransparentPaper from "./common/TransparentPaper";
 import {
   Grid2,
+  IconButton,
   List,
+  Link as MuiLink,
   ListItem,
   ListItemButton,
   ListItemIcon,
@@ -14,7 +16,7 @@ import {
 import axios from "axios";
 import Carousel from "react-material-ui-carousel";
 import { Link } from "react-router-dom";
-import { Circle } from "@mui/icons-material";
+import { Circle, GitHub } from "@mui/icons-material";
 
 function formatDate(string) {
   var options = { year: "numeric", month: "short", day: "numeric" };
@@ -126,6 +128,7 @@ function Projects({ navbarHeight }) {
                             variant="h6"
                             component={Link}
                             to={project.html_url}
+                            target="_blank"
                             sx={{
                               color: "#0d74e7",
                               textDecoration: "none",
@@ -206,6 +209,31 @@ function Projects({ navbarHeight }) {
                                 </ListItem>
                               ))}
                             </List>
+                          </ListItem>
+                          <ListItem
+                            disableGutters
+                            sx={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
+                            <IconButton
+                              sx={{
+                                borderRadius: 0,
+                                wordWrap: "break-word",
+                                width: "25vw",
+                              }}
+                              component={MuiLink}
+                              href={project.githubLink}
+                              target="_blank"
+                            >
+                              <GitHub fontSize="small"></GitHub>
+                              <Typography variant="button" sx={{ ml: "5px" }}>
+                                Click to open Github repository
+                              </Typography>
+                            </IconButton>
                           </ListItem>
                         </List>
                       </Paper>
