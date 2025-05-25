@@ -15,19 +15,18 @@ function Home({ navbarHeight }) {
           justifyContent="center"
           align="center"
           alignItems="center"
+          sx={{
+            p: "5vw",
+          }}
         >
-          <Grid2
-            size={{ xs: 12, md: 6 }}
-            order={{ xs: 2, md: 1 }}
-            sx={{ p: "10vh" }}
-          >
+          <Grid2 size={{ xs: 12, md: 6 }} order={{ xs: 2, md: 1 }}>
             <img
               src={process.env.PUBLIC_URL + "/img/home.png"}
               style={{
                 width: "100%",
                 height: "100%",
-                maxHeight: "400px",
-                maxWidth: "400px",
+                maxHeight: "300px",
+                maxWidth: "300px",
               }}
             />
           </Grid2>

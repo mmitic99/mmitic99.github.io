@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import Projects from "./components/Projects.js";
 import Skills from "./components/Skills.js";
+import About from "./components/About.js";
 
 const lightBackground = "/img/lightBackground.png";
 const darkBackground = "/img/darkBackground.png";
@@ -102,7 +103,10 @@ function App() {
               path="/skills"
               element={<Skills navbarHeight={navbarHeight} />}
             />
-
+            <Route
+              path="/about-me"
+              element={<About navbarHeight={navbarHeight} />}
+            />
             <Route
               path="/contact"
               element={<Contact navbarHeight={navbarHeight} />}

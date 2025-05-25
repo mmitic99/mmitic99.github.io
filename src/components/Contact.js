@@ -67,8 +67,8 @@ function Contact({ navbarHeight }) {
               style={{
                 width: "100%",
                 height: "100%",
-                maxHeight: "400px",
-                maxWidth: "400px",
+                maxHeight: "300px",
+                maxWidth: "300px",
               }}
             />
           </Grid2>
@@ -77,7 +77,12 @@ function Contact({ navbarHeight }) {
               Contact
             </Typography>
           </Grid2>
-          <Grid2 order={3}>
+          <Grid2
+            order={3}
+            sx={{
+              px: "5vw",
+            }}
+          >
             <Grid2 container justifyContent="center" align="center" spacing={2}>
               <Grid2 justifyContent="center" align="center" size={{ xs: 12 }}>
                 <Typography variant="body1">

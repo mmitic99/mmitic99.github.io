@@ -28,7 +28,7 @@ const navElements = [
   "Experience",
   "Projects",
   "Skills",
-  "About",
+  "About me",
   "Contact",
 ];
 
@@ -122,7 +122,7 @@ function Navbar({ handleThemeClick, onHeightChange }) {
                             sx={{ maxHeight: "2em" }}
                             color="inherit"
                             component={Link}
-                            to={"/" + el.toLowerCase()}
+                            to={"/" + el.replace(/\s+/g, "-").toLowerCase()}
                             onClick={handleClick}
                           >
                             {el}
@@ -160,7 +160,7 @@ function Navbar({ handleThemeClick, onHeightChange }) {
                 <NavbarButton
                   color="inherit"
                   component={Link}
-                  to={"/" + el.toLowerCase()}
+                  to={"/" + el.replace(/\s+/g, "-").toLowerCase()}
                 >
                   {el}
                 </NavbarButton>

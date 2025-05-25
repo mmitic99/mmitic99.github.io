@@ -42,8 +42,8 @@ function Experience({ navbarHeight }) {
               style={{
                 width: "100%",
                 height: "100%",
-                maxHeight: "400px",
-                maxWidth: "400px",
+                maxHeight: "300px",
+                maxWidth: "300px",
               }}
             />
           </Grid2>
@@ -52,7 +52,12 @@ function Experience({ navbarHeight }) {
               Experience
             </Typography>
           </Grid2>
-          <Grid2 order={3}>
+          <Grid2
+            order={3}
+            sx={{
+              px: "5vw",
+            }}
+          >
             <List>
               <ListItem sx={{ display: "flex", justifyContent: "flex-end" }}>
                 <Typography variant="h5">Internships</Typography>
